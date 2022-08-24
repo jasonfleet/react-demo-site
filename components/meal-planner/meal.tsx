@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 type Recipe = {
 
@@ -19,21 +19,20 @@ const Meal = () => {
     setMeal(meal)
   }
 
-  const handleChange = (e) => {
-    e.preventDefault()
-    setQuery(e.target.value)
-    console.log(e.target.value)
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value
+    setQuery(query)
   }
 
-  const queryMeal = (e) => {
+  const queryMeal = (e: FormEvent) => {
     e.preventDefault()
     fetchMeal()
     console.log(query)
   }
 
   return <div>
-    <form onSubmit={(e) => queryMeal(e) }>
-      <input onChange={e => handleChange(e) } value={query} type='text' />
+    <form onSubmit={(e:FormEvent) => queryMeal(e) }>
+      <input onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e) } value={query} type='text' />
       <input type="submit" value="Submit" />
     </form>
     {meal && <div>{meal[0].title}</div>}
