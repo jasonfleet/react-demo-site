@@ -21,7 +21,7 @@
   }
 
   #__next {
-    @apply h-full
+    @apply h-full flex flex-col
   }
 
 
@@ -66,38 +66,42 @@
 
   /* home */
   .home {
-    @apply h-full font-thin text-3xl
+    @apply font-thin text-3xl
   }
 
-  .home .intro-container {
-    @apply bg-slate-900 col-span-3 px-4 md:p-8
-  }
-
-  .home .intro-container a {
+  .home a {
     @apply decoration-1 underline underline-offset-4
   }
 
-  .home .intro-container-small {
-    @apply bg-slate-900 p-6 col-span-3 md:col-span-2
+  .home .top {
+    @apply m-auto grid grid-cols-1 md:grid-cols-2 place-content-center gap-6 p-4 w-10/12
   }
 
-  .home .intro-container-small a {
-    @apply block h-full decoration-1 underline underline-offset-4
+  .home .top div {
+    @apply bg-slate-900 px-4 md:p-8
   }
 
-  .home .intro-container li {
+  .home .middle {
+    @apply m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-content-center gap-6 p-4 w-10/12
+  }
+
+  .home .middle div {
+    @apply bg-slate-900 p-6
+  }
+
+  .home .intro li {
     @apply pl-6 md:pl-12
   }
 
-  .home .intro-container p {
+  .home .intro p {
     @apply leading-relaxed py-2
   }
 
-  .home .intro-container ul {
+  .home .intro ul {
     @apply pb-2
   }
 
-  .home .intro-container .contact {
+  .home .intro .contact {
     @apply pb-2
   }
 

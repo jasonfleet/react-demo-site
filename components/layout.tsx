@@ -7,11 +7,9 @@ export const siteTitle = 'Next.js Demo Website'
 
 export default function Layout({
   children,
-  classStyle,
   home
 }: {
   children: React.ReactNode
-  classStyle: string,
   home?: boolean
 }) {
   return (
@@ -22,17 +20,15 @@ export default function Layout({
           <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {!home &&
-        <Navigation />
-      }
+      { !home && <Navigation /> }
 
-      <main className={classStyle}>
+      <div className=' flex-grow overflow-auto'>
         {children}
-      </main>
+      </div>
 
-      <footer className='text-center bottom-0 my-12'>
+      <div className='text-center mt-8 mb-4'>
         <a href='mail:jason.fleet@googlemail.com'>jason.fleet@googlemail.com</a>
-      </footer>
+      </div>
     </>
   )
 }
