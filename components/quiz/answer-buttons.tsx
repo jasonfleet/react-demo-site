@@ -11,13 +11,13 @@ interface AnswersProps {
 const Answers = ({ correctAnswer, incorrectAnswers, onAnswer }: AnswersProps) => {
   const [answers, setAnswers] = useState<Array<string>>([])
 
-  const answeredQuestion = (playerAnswer: string) => {
+  // const answeredQuestion = (playerAnswer: string) => {
     // if (answer === null && question !== null) {
     //   setAnswer(playerAnswer)
     //   setHasCorrectAnswer(playerAnswer === question.correctAnswer)
     //   onAnswer(playerAnswer === question.correctAnswer)
     // }
-  }
+  // }
 
 
   // useEffect(() => {

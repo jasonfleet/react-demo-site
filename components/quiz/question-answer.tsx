@@ -1,17 +1,6 @@
 import { memo } from 'react'
 import AnswerButtons from '../../components/quiz/answer-buttons'
-
-export type QuestionObject = {
-  category: string,
-  id: string,
-  correctAnswer: string,
-  incorrectAnswers: Array<string>,
-  question: string,
-  tags: Array<string>,
-  type: string,
-  difficulty: string,
-  regions: Array<string>
-}
+import { QuestionObject } from './questions-swr'
 
 interface QuestionsProps {
   question: QuestionObject,

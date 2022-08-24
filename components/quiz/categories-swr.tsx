@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 
-const fetcher = (url: string) => fetch(url).then(res => res.json())
+const fetcher = async (url: string) => await fetch(url).then(res => res.json())
 
 interface Category {
   category: Array<string>,
@@ -14,7 +14,16 @@ export type QuizCategories = {
 }
 
 function Categories () {
-  const { data, error } = useSWR(`https://the-trivia-api.com/api/categories`, fetcher)
+  const { data, error } = useSWR(
+    `https://the-trivia-api.com/api/categories`,
+    fetcher,
+    {
+      revalidateOnFocus: false,
+    }
+  )
+
+  if (error) <p>Loading failed...</p>
+  if (!data) <h1>Loading...</h1>
 
   return {
     categories: data,

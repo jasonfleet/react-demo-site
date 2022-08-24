@@ -4,10 +4,9 @@ import Categories from '../../components/quiz/categories'
 import Difficulty from '../../components/quiz/difficulty'
 import Info from '../../components/quiz/info'
 import QuestionLimit from '../../components/quiz/question-limit'
-import QuestionAnswer, { QuestionObject } from '../../components/quiz/question-answer'
+import QuestionAnswer from '../../components/quiz/question-answer'
 import Score from '../../components/quiz/score'
-import useFetchQuestions from '../../components/quiz/use-fetch-questions'
-
+import QuestionsSWR, { QuestionObject, QuizQuestions } from '../../components/quiz/questions-swr'
 
 enum State  {
   GameOver,
@@ -20,9 +19,10 @@ function Quiz() {
   const [difficulty, setDifficulty] = useState<string>('easy')
   const [question, setQuestion] = useState<QuestionObject | null>(null)
   const [questionLimit, setQuestionLimit] = useState<number>(3)
-  const [questions, setQuestions] = useFetchQuestions(difficulty, questionLimit)
   const [score, setScore] = useState<number>(0)
   const [state, setState] = useState<State>(State.WaitingToStart)
+
+  const questions: QuizQuestions = QuestionsSWR(difficulty, questionLimit)
 
   const changeDifficulty = (newDifficulty: string) => {
     if (state === State.WaitingToStart) {
