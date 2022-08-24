@@ -1,16 +1,206 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer base {
 
-* {
-  box-sizing: border-box;
+  html {
+    @apply min-h-full
+  }
+
+  body {
+    @apply bg-slate-700 text-slate-200 h-screen
+  }
+
+  option {
+    @apply bg-slate-700
+  }
+
+  select {
+    @apply bg-slate-700 py-1 rounded-md
+  }
+
+  #__next {
+    @apply h-full
+  }
+
+
+  .title {
+    @apply pb-2 pt-4 block font-thin text-6xl text-center
+  }
+
+
+  /* contact */
+  .contact .title {
+    @apply pb-2 pt-4 block font-thin text-6xl text-center
+  }
+
+  /* food orders */
+  .food-orders {
+    @apply font-food-orders font-thin
+  }
+  .food-orders .title {
+    @apply pb-2 pt-4 block font-thin text-6xl text-center
+  }
+
+  .food-orders .h1 {
+    @apply pb-2 pt-4 block font-thin text-6xl text-center
+  }
+
+  /* games */
+  .games {
+    @apply font-normal
+  }
+
+  .games a {
+    @apply pb-2 pt-4 block font-thin text-4xl text-center
+  }
+
+  .games h1 {
+    @apply pb-2 pt-4 block font-thin text-6xl text-center
+  }
+
+  .games h2 {
+    @apply pb-2 pt-4 block font-thin text-4xl text-center
+  }
+
+  /* home */
+  .home {
+    @apply h-full font-thin text-3xl
+  }
+
+  .home .intro-container {
+    @apply bg-slate-900 col-span-3 px-4 md:p-8
+  }
+
+  .home .intro-container a {
+    @apply decoration-1 underline underline-offset-4
+  }
+
+  .home .intro-container-small {
+    @apply bg-slate-900 p-6 col-span-3 md:col-span-2
+  }
+
+  .home .intro-container-small a {
+    @apply block h-full decoration-1 underline underline-offset-4
+  }
+
+  .home .intro-container li {
+    @apply pl-6 md:pl-12
+  }
+
+  .home .intro-container p {
+    @apply leading-relaxed py-2
+  }
+
+  .home .intro-container ul {
+    @apply pb-2
+  }
+
+  .home .intro-container .contact {
+    @apply pb-2
+  }
+
+  /* nav */
+  nav {
+    @apply bg-slate-900 text-slate-100
+  }
+
+  .nav-button {
+    @apply m-2 font-thin text-xl
+  }
+
+  /* parts n rules */
+
+  /* quiz */
+  .quiz-answer {
+    @apply border-2 border-slate-800 rounded-3xl font-bold my-4 px-4 py-2 text-xl text-slate-200
+  }
+
+  .quiz-answer-right {
+    @apply bg-lime-600
+  }
+
+  .quiz-answer-button {
+    @apply border-2 font-semibold inline-block rounded-full text-3xl w-20 hover:bg-orange-400
+  }
+
+  .quiz-answer-wrong {
+    @apply bg-red-600
+  }
+
+  .quiz-button {
+    @apply bg-lime-600 border-2 border-slate-800 rounded-md font-bold px-3 ring-1 text-xl text-slate-200
+  }
+
+  .quiz-big-button {
+    @apply bg-lime-600 border-2 border-slate-800 font-quiz-title rounded-3xl font-bold px-3 w-full pt-3 ring-1 text-3xl text-slate-200
+  }
+
+  .quiz-categories {
+    @apply text-center
+  }
+
+  .quiz-categories > *{
+    @apply my-2
+  }
+
+  .quiz-difficulty > *{
+    @apply my-2
+  }
+
+  .quiz h1 {
+    @apply pb-2 pt-4 block font-quiz-title font-thin text-6xl text-center
+  }
+
+  .quiz h2 {
+    @apply pb-2 pt-4 block font-quiz-title font-thin text-4xl text-center
+  }
+
+  .quiz .title {
+    @apply my-4 py-4 block font-quiz-title font-thin text-8xl text-center
+  }
+
+  .quiz-question {
+    @apply h-28 mb-4 text-2xl text-center
+  }
+
+  .quiz-question-limit {
+    @apply text-center text-lg inline-block w-6
+  }
+
+  .quiz-questions {
+    @apply bg-lime-800
+  }
+
+  .quiz-score {
+    @apply block text-center
+  }
+
+  /* tic-tac-toe */
+  .tic-tac-toe {
+    @apply m-3 font-normal text-2xl
+  }
+
+  .tic-tac-toe .title {
+    @apply my-4 py-4 block font-quiz-title font-thin text-8xl text-center
+  }
+
+  /* weather */
+  .weather {
+    @apply m-3 font-normal text-2xl
+  }
+
+  .weather label {
+    @apply pb-2 pt-4 pr-3
+  }
+
+  .weather .city-detail {
+    @apply grid grid-cols-2 text-lg
+  }
+
+  .weather .title {
+    @apply pb-2 pt-4 block text-6xl text-center
+  }
+
 }
