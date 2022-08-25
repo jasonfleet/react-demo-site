@@ -1,7 +1,7 @@
 import DNode from "./DNode";
 
 
-class AllocationDiagram extends DNode {
+class Allocations extends DNode {
   label: string = ''
   partSets: Map<string, object> | null = null
   style: string = ''
@@ -13,4 +13,4 @@ class AllocationDiagram extends DNode {
 
 }
 
-export default AllocationDiagram
+export default Allocations
