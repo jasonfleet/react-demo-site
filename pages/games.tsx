@@ -5,7 +5,8 @@ import Layout from '../components/layout'
 //
 
 const Games: NextPage = () => {
-  return <Layout classStyle='games'>
+  return <Layout>
+    <div className='games'>
     <div className='grid grid-cols-1 justify-items-stretch mx-2 px-2'>
       <div className='title'>Games</div>
       <div>
@@ -23,6 +24,7 @@ const Games: NextPage = () => {
           <a>Tic-Tac-Toe</a>
         </Link>
       </div>
+    </div>
     </div>
   </Layout>
 }

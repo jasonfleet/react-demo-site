@@ -17,7 +17,8 @@ function WeatherPlus() {
     setSelectedCountry(country)
   }
 
-  return <Layout classStyle='weather'>
+  return <Layout>
+    <div className='weather'>
     <div className='title'>Weather Plus</div>
 
     <div className='flex flex-auto'>
@@ -29,6 +30,7 @@ function WeatherPlus() {
         {/* <CitySelect country={selectedCountry} onSelect={(city: City) => selectCity(city)} />
         <CityDetail city={selectedCity} /> */}
       </div>
+    </div>
     </div>
   </Layout>
 }

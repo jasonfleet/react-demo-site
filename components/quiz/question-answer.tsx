@@ -1,12 +1,30 @@
-import { memo } from 'react'
+import { memo, useEffect, useState } from 'react'
 import AnswerButtons from '../../components/quiz/answer-buttons'
-import { QuestionObject } from './questions-swr'
+import { State } from '../../pages/games/quiz'
+import useQuestions, { QuestionObject, QuizQuestions } from './use-questions'
+
+// interface QuestionsProps {
+//   question: QuestionObject,
+// }
 
 interface QuestionsProps {
-  question: QuestionObject,
+  difficulty: string,
+  state: State,
 }
 
-const QuestionAnswer = ({ question }: QuestionsProps) => {
+const QuestionAnswer = ({ difficulty, state }: QuestionsProps) => {
+  // const [question, setQuestion] = useState <QuestionObject | null > (null)
+
+  const question: QuestionObject = useQuestions({
+    difficulty: difficulty,
+  })
+
+  // useEffect(() => {
+  //   console.log('effect')
+  //   // if (questions && !questions.isLoading && !questions.isError) {
+  //   console.log(question)
+  // }, [difficulty])
+
   return <>
     <h2>Question</h2>
     {
