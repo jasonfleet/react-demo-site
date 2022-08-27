@@ -39,6 +39,7 @@
   .food-orders {
     @apply font-food-orders font-thin
   }
+
   .food-orders .title {
     @apply pb-2 pt-4 block font-thin text-6xl text-center
   }
@@ -145,11 +146,11 @@
     @apply text-center
   }
 
-  .quiz-categories > *{
+  .quiz-categories>* {
     @apply my-2
   }
 
-  .quiz-difficulty > *{
+  .quiz-difficulty>* {
     @apply my-2
   }
 

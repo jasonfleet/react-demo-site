@@ -24,6 +24,11 @@ const QuestionAnswer = ({ difficulty, state }: QuestionsProps) => {
     {
       question && <div>
         <div className='quiz-question'>{question.question}</div>
+        <AnswerButtons
+          correctAnswer={question.correctAnswer}
+          incorrectAnswers={question.incorrectAnswers}
+          onAnswer={(correct: boolean) => { console.log(correct)}}
+        />
       </div>
     }
   </>
