@@ -7,54 +7,68 @@ interface AnswersProps {
   onAnswer: Function,
 }
 
+type Answer = {
+  answer: string,
+  index: string,
+  correct: boolean,
+}
 
 const Answers = ({ correctAnswer, incorrectAnswers, onAnswer }: AnswersProps) => {
-  const [answers, setAnswers] = useState<Array<string>>([])
+  const [answers, setAnswers] = useState<Array<Answer>>([])
 
-  // const answeredQuestion = (playerAnswer: string) => {
-    // if (answer === null && question !== null) {
-    //   setAnswer(playerAnswer)
-    //   setHasCorrectAnswer(playerAnswer === question.correctAnswer)
-    //   onAnswer(playerAnswer === question.correctAnswer)
-    // }
-  // }
+  const answered = (answer: string) => {
+    onAnswer(answer === correctAnswer)
+  }
 
+  useEffect(() => {
+    let ans: Array<Answer> = []
+    let ansIndex = 0
+    let correctAnswerIndex = Math.floor(Math.random() * 4)
 
-  // useEffect(() => {
-  //   if (question !== null) {
-  //     let ans: Array<string> = []
-  //     let ansIndex = 0
-  //     let correctAnswerIndex = Math.floor(Math.random() * 4)
+    // setAnswer(null)
+    // setHasCorrectAnswer(false)
 
-  //     // setAnswer(null)
-  //     // setHasCorrectAnswer(false)
+    for (let i = 0, j = incorrectAnswers.length + 1; i < j; i++) {
+      if (correctAnswerIndex === i) {
+        ans.push({
+          answer: correctAnswer,
+          index: String.fromCharCode(65 + i),
+          correct: true
+        })
+      } else {
+        ans.push({
+          answer: incorrectAnswers[ansIndex++],
+          index: String.fromCharCode(65 + i),
+          correct: false
+        })
+      }
+    }
 
-  //     for (let i = 0, j = question.incorrectAnswers.length + 1; i < j; i++) {
-  //       if (correctAnswerIndex === i) {
-  //         ans.push({
-  //           answer: question.correctAnswer,
-  //           key: String.fromCharCode(65 + i),
-  //         })
-  //       } else {
-  //         ans.push({
-  //           answer: question.incorrectAnswers[ansIndex++],
-  //           key: String.fromCharCode(65 + i),
-  //         })
-  //       }
-  //     }
+    setAnswers(ans)
+  }, [correctAnswer, incorrectAnswers])
 
-  //     setAnswers(ans)
-  //   }
-  // }, [correctAnswer, incorrectAnswers])
+  return <>
+    <div className=''>
+      {
+        answers.map((answer, i) => {
+          return <div className='quiz-answer' key={'quiz-answer-' + i} >
+            {answer.index}.&nbsp;
+            {answer.answer}
+          </div>
+        })
+      }
+    </div>
+    <div className='flex flex-row gap-4 justify-center mt-8'>
+      {
+        answers.map((answer, i) => {
+          return <button className='quiz-answer-button' key={'quiz-answer-button' + i} onClick={() => answered(answer)}>
+            {answer.index}
+          </button>
+        })
+      }
+    </div>
 
-  return <div className='flex flex-row gap-4 justify-center mt-8'>
-    {incorrectAnswers && incorrectAnswers.map((answer, i) => {
-      return <button className='quiz-answer-button' key={'quiz-answer-button' + i} onClick={() => onAnswer(answer)}>
-        {answer}
-      </button>
-    })}
-
-  </div>
+  </>
 }
 
 export default memo(Answers)
