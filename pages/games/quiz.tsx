@@ -20,6 +20,12 @@ function Quiz() {
   const [score, setScore] = useState<number>(0)
   const [state, setState] = useState<State>(State.WaitingToStart)
 
+  const answered = (isCorrect: boolean) => {
+    if (isCorrect) {
+      setScore(score + 1)
+    }
+  }
+
   const changeDifficulty = (newDifficulty: string) => {
     if (state === State.WaitingToStart) {
       setDifficulty(newDifficulty)
@@ -55,6 +61,8 @@ function Quiz() {
     setState(State.WaitingForAnswer)
   }
 
+
+
   return <Layout>
     <Info />
     <div className='quiz'>
@@ -65,7 +73,7 @@ function Quiz() {
         </div>
 
         <div className='flex flex-col'>
-          <QuestionAnswer difficulty={difficulty} state={state} />
+          <QuestionAnswer difficulty={difficulty} onAnswer={(isCorrect: boolean) => answered(isCorrect)} state={state} />
         </div>
 
         <div className='space-y-7'>
