@@ -8,38 +8,41 @@ interface AnswersProps {
 }
 
 type Answer = {
-  answer: string,
-  index: string,
-  correct: boolean,
+    answer: string,
+    correct: boolean,
+    index: string,
 }
 
 const Answers = ({ correctAnswer, incorrectAnswers, onAnswer }: AnswersProps) => {
   const [answers, setAnswers] = useState<Array<Answer>>([])
 
-  const answered = (answer: string) => {
-    onAnswer(answer === correctAnswer)
+  const answered = (answer: Answer) => {
+    onAnswer(answer.correct)
   }
 
   useEffect(() => {
     let ans: Array<Answer> = []
     let ansIndex = 0
     let correctAnswerIndex = Math.floor(Math.random() * 4)
+    let index: string = ''
 
     // setAnswer(null)
     // setHasCorrectAnswer(false)
 
     for (let i = 0, j = incorrectAnswers.length + 1; i < j; i++) {
+      index = String.fromCharCode(65 + i)
+
       if (correctAnswerIndex === i) {
         ans.push({
-          answer: correctAnswer,
-          index: String.fromCharCode(65 + i),
-          correct: true
+            answer: correctAnswer,
+            index: index,
+            correct: true,
         })
       } else {
         ans.push({
-          answer: incorrectAnswers[ansIndex++],
-          index: String.fromCharCode(65 + i),
-          correct: false
+            answer: incorrectAnswers[ansIndex++],
+            index: index,
+            correct: false,
         })
       }
     }
