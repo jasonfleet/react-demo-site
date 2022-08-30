@@ -5,7 +5,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import Layout from '../components/layout'
-import DiagramComponent from '../components/parts-n-rules/DiagramComponent '
+import DiagramComponent from '../app/parts-n-rules/components/diagram'
 import diagramIcon from '../public/icons/account_tree_FILL0_wght100_GRAD0_opsz48.svg'
 
 enum States {
@@ -16,7 +16,7 @@ enum States {
 function PartsAndRules() {
   const [mode, setMode] = useState<States>(States.Page)
 
-  return <Layout classStyle='parts-n-rules'>
+  return <Layout>
     <div className='title mb-12'>Parts And Rules</div>
 
     <div className='grid justify-center'>

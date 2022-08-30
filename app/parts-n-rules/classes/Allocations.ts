@@ -1,13 +1,13 @@
-import DNode from "./DNode";
+import Node from "./Node";
 
 
-class Allocations extends DNode {
+class Allocations extends Node {
   label: string = ''
   partSets: Map<string, object> | null = null
   style: string = ''
   graph: Object = {}
 
-  connect(node1: DNode, node2: DNode) {
+  connect(node1: Node, node2: Node) {
     // if ()
   }
 

@@ -1,7 +1,7 @@
-import DNode from "./DNode"
+import Node from "./Node"
 import Edge from "./Edge"
 
-class Connector extends DNode {
+class Connector extends Node {
   edgesIn: Array<Edge> = []
   edgesOut: Array<Edge> = []
   style: string = ''
