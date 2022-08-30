@@ -1,7 +1,8 @@
 import { CSSProperties, MouseEvent, MouseEventHandler, useState } from "react"
-import NodeView from "../classes/NodeView"
-import PartView from "./part-view"
-import Tools from "./Tools"
+import NodeView from "./NodeView"
+import ConnectorView from "./ConnectorView"
+import PartView from "./PartView"
+import Tools from "./tools"
 
 const DiagramComponent = () => {
   const [views, setViews] = useState<Array<NodeView>>([])
@@ -13,12 +14,13 @@ const DiagramComponent = () => {
 
     switch (part) {
       case 'a':
-        view = new NodeView()
-        view.component = PartView({y: 0})
+        view = new PartView({ label: 'PartView', x: 0, y: 200})
         break
       case 'b':
-        view = new NodeView()
-        view.component = PartView({y: 100})
+        view = new ConnectorView({ label: 'ConnectorView', x: 0, y: 100})
+        break
+      case 'd':
+        setViews(views.map((v: NodeView) => { v.position.x += 10; return v }))
         break
       default:
         console.log('no part', part)
@@ -34,7 +36,7 @@ const DiagramComponent = () => {
   }
 
   const styles: CSSProperties = {
-    backgroundColor: 'rgb(251 191 36)',
+    backgroundColor: 'rgb(252 211 77)',
     height: '100%',
     left: '0px',
     position: 'absolute',
@@ -48,7 +50,7 @@ const DiagramComponent = () => {
       style={styles}
       onClick={(e: MouseEvent<HTMLDivElement>) => clickedOn(e)}
     >
-      {views.map((view: NodeView, i: number) => view.component)}
+      {views.map((view: NodeView, i: number) => view.render())}
     </div>
   </>
 }

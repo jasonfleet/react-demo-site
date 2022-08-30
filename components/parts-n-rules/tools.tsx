@@ -9,6 +9,7 @@ const Tools = ({onAddPart}: ToolsProps) => {
     <div className='flex flex-auto'>
       <button className='bg-slate-400 border button px-2' onClick={() => onAddPart('a')} type='button'>A</button>
       <button className='bg-slate-400 border button px-2' onClick={() => onAddPart('b')} type='button'>B</button>
+      <button className='bg-slate-400 border button px-2' onClick={() => onAddPart('d')} type='button'>D</button>
       <button className='bg-slate-400 border button px-2' type='button'>Close</button>
     </div>
   </div>
