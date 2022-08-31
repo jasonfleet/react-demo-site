@@ -3,7 +3,7 @@ import Meal from '../../components/meal-planner/meal'
 
 const MealPlanner = () => {
 
-  return <Layout classStyle='food-orders'>
+  return <Layout>
     <div className='title'>Meal Planner</div>
     <Meal />
   </Layout>

@@ -49,7 +49,7 @@ function TicTacToe() {
   //   }
   // }, [grid, player])
 
-  return <Layout classStyle='tic-tac-toe'>
+  return <Layout>
     <div>
       <div className='title'>Tic-Tac-Toe</div>
       <div className='grid h-max place-content-center'>
