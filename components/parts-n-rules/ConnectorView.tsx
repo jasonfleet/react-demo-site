@@ -17,7 +17,7 @@ class ConnectorView extends NodeView  {
       top: `${this.position.y}px`,
     }
 
-    return <div key={'part-view-' + this.id} style={styles}>
+    return <div key={this.id} style={styles}>
       {this.label}
     </div>
   }

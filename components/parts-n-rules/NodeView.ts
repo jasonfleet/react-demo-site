@@ -1,4 +1,5 @@
 import { v4 as uuid } from 'uuid'
+import { CSSProperties, MouseEvent } from "react"
 import React, { Component, ReactElement } from "react"
 import Edge from "./Edge"
 
@@ -30,6 +31,10 @@ class NodeView extends Component<NodeViewProps> {
     this.position = { x: props.x, y: props.y }
   }
 
+
+  clicked(e: MouseEvent<HTMLDivElement>) {
+    e.stopPropagation()
+  }
 }
 
 export default NodeView

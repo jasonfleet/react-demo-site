@@ -1,16 +1,23 @@
+import { CSSProperties } from "react"
 import NodeView, { NodeViewProps } from "./NodeView"
-import PartSet from "./PartSet"
 
 interface PartSetProps extends NodeViewProps { }
 
 class PartSetView extends NodeView {
 
-
   constructor(props: PartSetProps) {
     super(props)
   }
+
   render() {
-    return <div className='fixed top-0 left 0'>
+    let styles: CSSProperties = {
+      color: 'black',
+      left: `${this.position.x}px`,
+      position: 'fixed',
+      top: `${this.position.y}px`,
+    }
+
+    return <div className='fixed top-0 left 0' key={this.id} style={styles}>
       {this.label}
     </div>
   }

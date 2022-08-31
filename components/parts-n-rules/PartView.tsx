@@ -9,10 +9,6 @@ class PartView extends NodeView {
     super(props)
   }
 
-  clicked(e: MouseEvent<HTMLDivElement>) {
-    e.stopPropagation()
-  }
-
   render() {
     let styles: CSSProperties = {
       color: 'black',
@@ -23,7 +19,7 @@ class PartView extends NodeView {
 
     return <div
       onClick={(e: MouseEvent<HTMLDivElement>) => this.clicked(e)}
-      key={'part-view-' + this.id} style={styles}>
+      key={this.id} style={styles}>
       {this.label}
     </div>
   }

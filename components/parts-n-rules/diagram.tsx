@@ -3,17 +3,27 @@ import NodeView from "./NodeView"
 import ConnectorView from "./ConnectorView"
 import PartView from "./PartView"
 import Tools from "./tools"
+import PartSetView from "./PartSetView"
+
+export enum PartViews {
+  Connector,
+  Part,
+  PartSet,
+}
 
 const DiagramComponent = () => {
   const [views, setViews] = useState<Array<NodeView>>([])
 
-  const addPart = (part: string) => {
+  const addPart = (part: PartViews) => {
     let view: NodeView | null = null
 
     console.log(part)
 
     switch (part) {
-      case 'a':
+      case PartViews.PartSet:
+        view = new PartSetView({ label: 'PartSetView', x: 0, y: 200})
+        break
+      case PartViews.Part:
         view = new PartView({ label: 'PartView', x: 0, y: 200})
         break
       case 'b':
@@ -36,7 +46,7 @@ const DiagramComponent = () => {
   }
 
   const styles: CSSProperties = {
-    backgroundColor: 'rgb(252 211 77)',
+    backgroundColor: 'rgb(255 230 149)',
     height: '100%',
     left: '0px',
     position: 'absolute',
@@ -45,7 +55,7 @@ const DiagramComponent = () => {
   }
 
   return <>
-    <Tools onAddPart={ (part: string) => addPart(part) } />
+    <Tools onAddPart={ (part: PartViews) => addPart(part) } />
     <div
       style={styles}
       onClick={(e: MouseEvent<HTMLDivElement>) => clickedOn(e)}
