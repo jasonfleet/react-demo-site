@@ -3,7 +3,8 @@ import Layout from '../components/layout'
 import CityDetail from '../components/weather-plus/city-detail'
 // import CitySelect from '../components/weather-plus/city-select'
 // import { City } from '../components/weather-plus/city-swr'
-import CountrySelect, { Country } from '../components/weather-plus/country-select'
+import CountrySelect from '../components/weather-plus/country-select'
+import { Country } from '../components/weather-plus/country-swr'
 
 function WeatherPlus() {
   // const [selectedCity, setSelectedCity] = useState<City | null>(null)
