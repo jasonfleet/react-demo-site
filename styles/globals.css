@@ -182,6 +182,26 @@
     @apply block text-center
   }
 
+  /* rock-paper-scissors */
+  .rock-paper-scissors {
+    @apply grid place-content-center
+  }
+  .rock-paper-scissors .choose {
+      @apply m-3 font-quiz-title text-4xl mx-auto
+  }
+
+  .rock-paper-scissors .play-button {
+    @apply m-3 font-quiz-title text-4xl
+  }
+
+  .rock-paper-scissors .result {
+    @apply font-quiz-title text-4xl mt-12 mx-auto align-bottom
+  }
+
+  .rock-paper-scissors .timer {
+    @apply font-quiz-title text-8xl mx-auto align-bottom
+  }
+
   /* tic-tac-toe */
   .tic-tac-toe {
     @apply m-3 font-normal text-2xl
