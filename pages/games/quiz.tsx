@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import Layout from '../../components/layout'
 import Categories from '../../components/quiz/categories'
 import Difficulty from '../../components/quiz/difficulty'
 import Info from '../../components/quiz/info'
+import Layout from '../../components/layout'
 import QuestionLimit from '../../components/quiz/question-limit'
 import QuestionAnswer from '../../components/quiz/question-answer'
 import Score from '../../components/quiz/score'
@@ -19,6 +19,12 @@ function Quiz() {
   const [limit, setLimit] = useState<number>(3)
   const [score, setScore] = useState<number>(0)
   const [state, setState] = useState<State>(State.WaitingToStart)
+
+  const answered = (isCorrect: boolean) => {
+    if (isCorrect) {
+      setScore(score + 1)
+    }
+  }
 
   const changeDifficulty = (newDifficulty: string) => {
     if (state === State.WaitingToStart) {
@@ -55,6 +61,8 @@ function Quiz() {
     setState(State.WaitingForAnswer)
   }
 
+
+
   return <Layout>
     <Info />
     <div className='quiz'>
@@ -65,7 +73,7 @@ function Quiz() {
         </div>
 
         <div className='flex flex-col'>
-          <QuestionAnswer difficulty={difficulty} state={state} />
+          <QuestionAnswer difficulty={difficulty} onAnswer={(isCorrect: boolean) => answered(isCorrect)} state={state} />
         </div>
 
         <div className='space-y-7'>
