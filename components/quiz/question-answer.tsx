@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from 'react'
-import { State } from '../../pages/games/quiz'
+import { GameState } from '../../pages/games/quiz'
 import { QuestionObject, QuestionServices } from './question-services'
 
 type Answer = {
@@ -11,7 +11,7 @@ type Answer = {
 interface QuestionsProps {
   difficulty: string,
   onAnswer: Function,
-  state: State,
+  state: GameState,
 }
 
 const questionsService: QuestionServices = new QuestionServices()
@@ -23,8 +23,10 @@ const QuestionAnswer = ({ difficulty, onAnswer, state }: QuestionsProps) => {
   const [question, setQuestion] = useState<QuestionObject | null>(null)
 
   const answered = (answer: Answer) => {
-    onAnswer(answer.correct)
-    setAnswerIndex(answer.index)
+    if (state === GameState.WaitingForAnswer) {
+      onAnswer(answer.correct)
+      setAnswerIndex(answer.index)
+    }
   }
 
   useEffect(() => {
