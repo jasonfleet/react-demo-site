@@ -5,7 +5,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import Layout from '../components/layout'
-import DiagramComponent from '../app/parts-n-rules/components/diagram'
+import DiagramComponent from '../components/parts-n-rules/diagram'
 import diagramIcon from '../public/icons/account_tree_FILL0_wght100_GRAD0_opsz48.svg'
 
 enum States {
