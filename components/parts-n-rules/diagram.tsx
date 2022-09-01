@@ -26,11 +26,8 @@ const DiagramComponent = () => {
       case PartViews.Part:
         view = new PartView({ label: 'PartView', x: 0, y: 200})
         break
-      case 'b':
+      case PartViews.Connector:
         view = new ConnectorView({ label: 'ConnectorView', x: 0, y: 100})
-        break
-      case 'd':
-        setViews(views.map((v: NodeView) => { v.position.x += 10; return v }))
         break
       default:
         console.log('no part', part)
