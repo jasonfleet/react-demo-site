@@ -17,6 +17,8 @@ const Home: NextPage = () => {
           </div>
         </div>
 
+        <hr className='mx-auto w-1/3 sm:w-1/3' />
+
         <div className='links'>
 
           <div className='intro-small'>
@@ -49,17 +51,34 @@ const Home: NextPage = () => {
             </Link>
           </div>
 
-          <div className='intro-small'>
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
-          </div>
-
         </div>
+
+        <hr className='mx-auto w-1/3 sm:w-1/3' />
 
         <div className='description'>
           <div className='intro-small'>
             <p>Except fo the <Link href="/games"><a>Games</a></Link> it&apos;s all a work in progress...</p>
+          </div>
+        </div>
+
+        <div className='description'>
+          <div className='intro-small'>
+            The source code can be found on&nbsp;
+            <Link href='https://github.com/jasonfleet/react-demo-site'>
+              <a target='__blank'>github</a>
+            </Link>
+          </div>
+        </div>
+
+        <hr className='mx-auto w-1/3 sm:w-1/3' />
+
+        <div className='description'>
+          <div className='intro-small'>
+            <div className='intro-small'>
+              <Link href="/contact">
+                <a>Contact</a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
