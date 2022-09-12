@@ -11,12 +11,6 @@ export type QuestionObject = {
   regions: Array<string>
 }
 
-// export type QuizQuestions = {
-//   questions: Array<QuestionObject> | [],
-//   isLoading: boolean,
-//   isError: any | null
-// }
-
 interface QuestionsCache {
   [key: string]: Array<QuestionObject>,
 }
@@ -40,9 +34,20 @@ export class QuestionServices {
     if (!this.cache.hasOwnProperty(difficulty) || this.cache[difficulty].length === 0) {
       this.loading = true
       return this.loadQuestions(difficulty)
-        .then(res => { this.cache[difficulty] = res; this.loading = false; return res[0]})
+        .then(res => {
+          let q = res[0]
+
+          this.cache[difficulty] = res.slice(1)
+          this.loading = false
+
+          return q
+        })
     }
 
-    return this.cache[difficulty][0]
+    let q = this.cache[difficulty][0]
+
+    this.cache[difficulty] = this.cache[difficulty].slice(1)
+
+    return q
   }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Categories from '../../components/quiz/categories'
 import Difficulty from '../../components/quiz/difficulty'
 import Info from '../../components/quiz/info'
@@ -6,6 +6,7 @@ import Layout from '../../components/layout'
 import QuestionLimit from '../../components/quiz/question-limit'
 import QuestionAnswer from '../../components/quiz/question-answer'
 import Score from '../../components/quiz/score'
+import GameOver from '../../components/quiz/game-over'
 
 export enum GameState {
   GameOver,
@@ -17,6 +18,7 @@ export enum GameState {
 function Quiz() {
   const [difficulty, setDifficulty] = useState<string>('easy')
   const [limit, setLimit] = useState<number>(3)
+  const [questionCount, setQuestionCount] = useState<number>(0)
   const [score, setScore] = useState<number>(0)
   const [state, setState] = useState<GameState>(GameState.WaitingToStart)
 
@@ -24,6 +26,8 @@ function Quiz() {
     if (isCorrect) {
       setScore(score + 1)
     }
+      setState(GameState.WaitingToContinue)
+      setQuestionCount(questionCount + 1)
   }
 
   const changeDifficulty = (newDifficulty: string) => {
@@ -38,30 +42,29 @@ function Quiz() {
     }
   }
 
-  const continueQuiz = () => {
-    setState(GameState.WaitingForAnswer)
-  }
-
-  const endGame = () => {
-    setState(GameState.GameOver)
+  const continueGame = () => {
+    if (questionCount === limit) {
+      setState(GameState.GameOver)
+    } else {
+      setState(GameState.WaitingForAnswer)
+    }
   }
 
   const onCategoryClick = (category: string) => {
     console.log(category)
   }
 
-  const onAnswer = (correct: boolean) => {
-    if (correct) {
-      setScore(score + 1)
-    }
-  }
-
   const startGame = () => {
     setScore(0)
+    setQuestionCount(0)
     setState(GameState.WaitingForAnswer)
   }
 
-
+  const endGame = () => {
+    setScore(0)
+    setQuestionCount(0)
+    setState(GameState.WaitingToStart)
+  }
 
   return <Layout>
     <Info />
@@ -73,7 +76,7 @@ function Quiz() {
         </div>
 
         <div className='flex flex-col'>
-          <QuestionAnswer difficulty={difficulty} onAnswer={(isCorrect: boolean) => answered(isCorrect)} state={state} />
+          <QuestionAnswer difficulty={difficulty} onAnswer={(isCorrect: boolean) => answered(isCorrect)} limit={limit} state={state} onEndGame={() => endGame() }/>
         </div>
 
         <div className='space-y-7'>
@@ -83,8 +86,9 @@ function Quiz() {
         </div>
 
         <div className='col-start-2'>
-          {(state === GameState.WaitingToStart || state === GameState.GameOver) && <button className='quiz-big-button mt-12 ' onClick={() => startGame()} type='button'>Start</button>}
-          {state === GameState.WaitingToContinue && <button className='quiz-big-button mt-12' onClick={() => continueQuiz()} type='button'>Continue</button>}
+          {state === GameState.GameOver && <GameOver limit={limit} onStartGame={() => endGame() } score={score} />}
+          {state === GameState.WaitingToStart && <button className='quiz-big-button mt-12 ' onClick={() => startGame()} type='button'>Start</button>}
+          {state === GameState.WaitingToContinue && <button className='quiz-big-button mt-12' onClick={() => continueGame()} type='button'>Continue</button>}
         </div>
       </div>
     </div>

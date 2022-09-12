@@ -1,6 +1,8 @@
-import { memo, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { GameState } from '../../pages/games/quiz'
-import { QuestionObject, QuestionServices } from './question-services'
+import { QuestionObject, QuestionServices } from '../../pages/api/questions'
+import { strictEqual } from 'assert'
+import { stat } from 'fs'
 
 type Answer = {
   answer: string,
@@ -10,15 +12,16 @@ type Answer = {
 
 interface QuestionsProps {
   difficulty: string,
+  onEndGame: Function,
   onAnswer: Function,
+  limit: number,
   state: GameState,
 }
 
 const questionsService: QuestionServices = new QuestionServices()
 
-const QuestionAnswer = ({ difficulty, onAnswer, state }: QuestionsProps) => {
+const QuestionAnswer = ({ difficulty, onAnswer, limit, onEndGame, state }: QuestionsProps) => {
   const [answers, setAnswers] = useState<Array<Answer>>([])
-  const [correctAnswerIndex, setCorrectAnswerIndex] = useState<string>('')
   const [answerIndex, setAnswerIndex] = useState<string>('')
   const [question, setQuestion] = useState<QuestionObject | null>(null)
 
@@ -30,7 +33,7 @@ const QuestionAnswer = ({ difficulty, onAnswer, state }: QuestionsProps) => {
   }
 
   useEffect(() => {
-    if (!questionsService.loading) {
+    const getQuestions = () => {
       questionsService.getNextQuestion(difficulty)
       .then(res => {
         let ans: Array<Answer> = []
@@ -47,7 +50,6 @@ const QuestionAnswer = ({ difficulty, onAnswer, state }: QuestionsProps) => {
               index: index,
               correct: true,
             })
-            setCorrectAnswerIndex(index)
           } else {
             ans.push({
               answer: res.incorrectAnswers[ansIndex++],
@@ -57,10 +59,13 @@ const QuestionAnswer = ({ difficulty, onAnswer, state }: QuestionsProps) => {
           }
         }
 
-        console.log(ans)
         setQuestion(res)
+        setAnswerIndex('')
         setAnswers(ans)
       })
+    }
+    if (!questionsService.loading && state === GameState.WaitingForAnswer) {
+      getQuestions()
     }
   }, [difficulty, state])
 
@@ -85,7 +90,11 @@ const QuestionAnswer = ({ difficulty, onAnswer, state }: QuestionsProps) => {
           <div className='flex flex-row gap-4 justify-center mt-8'>
             {
               answers.map((answer: Answer, i: number) => {
-                return <button className='quiz-answer-button' key={'quiz-answer-button-' + i} onClick={() => answered(answer)}>
+                return <button
+                  className={'quiz-answer-button' + (answerIndex !== '' && answerIndex === answer.index ? answer.correct ? ' quiz-answer-button-right' : ' quiz-answer-button-wrong' : '') }
+                  key={'quiz-answer-button-' + i}
+                  onClick={() => answered(answer)}
+                >
                   {answer.index}
                 </button>
               })

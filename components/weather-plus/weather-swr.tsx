@@ -1,18 +1,13 @@
 import useSWR from 'swr'
 
+// import wea
+
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
-const APIKey = '6b88caafdaa4c85e42dc795ca5a9ae58'
 
 interface Category {
   category: Array<string>,
   // selected: boolean,
-}
-
-export type QuizCategories = {
-  categories: Category,
-  isLoading: boolean,
-  isError: any | null
 }
 
 interface WeatherPlusProps {
@@ -21,7 +16,7 @@ interface WeatherPlusProps {
 }
 
 const WeatherSWR = ({lat, lon}: WeatherPlusProps) => {
-  const { data, error } = useSWR(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKey}`, fetcher)
+  const { data, error } = useSWR(`api/weather`, fetcher)
 
   return {
     categories: data,

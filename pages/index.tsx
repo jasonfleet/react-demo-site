@@ -18,33 +18,44 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-
         <div className='middle'>
+
           <div className='intro-small'>
             <Link href="/demo-pages">
               <a>Demo Pages</a>
             </Link>
           </div>
+
           <div className='intro-small'>
             <Link href="/games">
               <a>Games</a>
             </Link>
           </div>
+
+          <div className='intro-small'>
+            <Link href="/tickets">
+              <a>Tickets</a>
+            </Link>
+          </div>
+
           <div className='intro-small'>
             <Link href="/parts-and-rules">
               <a>Project - Parts and Rules</a>
             </Link>
           </div>
+
           <div className='intro-small'>
             <Link href="/weather-plus">
               <a>Weather Plus</a>
             </Link>
           </div>
+
           <div className='intro-small'>
             <Link href="/contact">
               <a>Contact</a>
             </Link>
           </div>
+
         </div>
       </div>
     </Layout>

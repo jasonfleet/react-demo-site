@@ -9,6 +9,10 @@ function Navigation() {
           <a className='nav-button'>Home</a>
         </Link>
 
+        {/* <Link href="/tickets">
+          <a className='nav-button'>Tickets</a>
+        </Link> */}
+
         <Link href="/demo-pages">
           <a className='nav-button'>Demo Pages</a>
         </Link>
