@@ -43,7 +43,7 @@ function Quiz() {
   }
 
   const continueGame = () => {
-    if (questionCount === limit) {
+    if (questionCount === limit + 1) {
       setState(GameState.GameOver)
     } else {
       setState(GameState.WaitingForAnswer)
@@ -56,7 +56,7 @@ function Quiz() {
 
   const startGame = () => {
     setScore(0)
-    setQuestionCount(0)
+    setQuestionCount(1)
     setState(GameState.WaitingForAnswer)
   }
 
