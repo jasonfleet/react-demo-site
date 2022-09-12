@@ -26,8 +26,7 @@ function Quiz() {
     if (isCorrect) {
       setScore(score + 1)
     }
-      setState(GameState.WaitingToContinue)
-      setQuestionCount(questionCount + 1)
+    setState(GameState.WaitingToContinue)
   }
 
   const changeDifficulty = (newDifficulty: string) => {
@@ -43,9 +42,10 @@ function Quiz() {
   }
 
   const continueGame = () => {
-    if (questionCount === limit + 1) {
+    if (questionCount === limit) {
       setState(GameState.GameOver)
     } else {
+    setQuestionCount(questionCount + 1)
       setState(GameState.WaitingForAnswer)
     }
   }
@@ -76,7 +76,14 @@ function Quiz() {
         </div>
 
         <div className='flex flex-col'>
-          <QuestionAnswer difficulty={difficulty} onAnswer={(isCorrect: boolean) => answered(isCorrect)} limit={limit} state={state} onEndGame={() => endGame() }/>
+          <QuestionAnswer
+            difficulty={difficulty}
+            limit={limit}
+            onAnswer={(isCorrect: boolean) => answered(isCorrect)}
+            onEndGame={() => endGame() }
+            questionCount={questionCount}
+            state={state}
+          />
         </div>
 
         <div className='space-y-7'>

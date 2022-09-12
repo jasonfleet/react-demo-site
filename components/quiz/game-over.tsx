@@ -17,7 +17,7 @@ const GameOver = ({ limit, onStartGame, score}: GameOverProps) => {
     <div className='grid h-full w-full place-content-center'>
       <div className='bg-slate-700 drop-shadow-2xl border-2 p-4 rounded-xl text-center h-60 w-60'>
         <h2>GameOver</h2>
-        <p>You got { score } correct out of { limit }</p>
+        <p>You correctly answered<br/>{ score } of { limit } questions</p>
         <button className='quiz-big-button mt-12 ' onClick={() => startGame()} type='button'>OK</button>
       </div>
     </div>

@@ -12,15 +12,16 @@ type Answer = {
 
 interface QuestionsProps {
   difficulty: string,
+  limit: number,
   onEndGame: Function,
   onAnswer: Function,
-  limit: number,
+  questionCount: number,
   state: GameState,
 }
 
 const questionsService: QuestionServices = new QuestionServices()
 
-const QuestionAnswer = ({ difficulty, onAnswer, limit, onEndGame, state }: QuestionsProps) => {
+const QuestionAnswer = ({ difficulty, limit, questionCount, onAnswer, onEndGame, state }: QuestionsProps) => {
   const [answers, setAnswers] = useState<Array<Answer>>([])
   const [answerIndex, setAnswerIndex] = useState<string>('')
   const [question, setQuestion] = useState<QuestionObject | null>(null)
@@ -70,7 +71,7 @@ const QuestionAnswer = ({ difficulty, onAnswer, limit, onEndGame, state }: Quest
   }, [difficulty, state])
 
   return <>
-    <h2>Question</h2>
+    <h2>Question {questionCount > 0 ? questionCount : ''}</h2>
     {
       question && <div>
         <div className='quiz-question'>{question.question}</div>
