@@ -24,6 +24,9 @@
     @apply h-full flex flex-col
   }
 
+  .info-popup {
+    @apply absolute p-2 top-0 right-0
+  }
 
   .title {
     @apply pb-2 pt-4 block font-thin text-6xl text-center
