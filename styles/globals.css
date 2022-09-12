@@ -74,20 +74,24 @@
     @apply decoration-1 underline underline-offset-4
   }
 
-  .home .top {
-    @apply m-auto grid grid-cols-1 md:grid-cols-2 place-content-center gap-6 p-4 w-10/12
+  .home .description {
+    @apply m-auto grid grid-cols-1 p-4 place-content-center w-10/12
   }
 
-  .home .top div {
-    @apply bg-slate-900 px-4 md:p-8
-  }
-
-  .home .middle {
-    @apply m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-content-center gap-6 p-4 w-10/12
-  }
-
-  .home .middle div {
+  .home .description div {
     @apply bg-slate-900 p-6
+  }
+
+  .home .links {
+    @apply m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 w-10/12
+  }
+
+  .home .links div {
+    @apply bg-slate-900 p-6
+  }
+
+  .home .intro .contact {
+    @apply pb-2
   }
 
   .home .intro li {
@@ -102,8 +106,12 @@
     @apply pb-2
   }
 
-  .home .intro .contact {
-    @apply pb-2
+  .home .top {
+    @apply m-auto grid grid-cols-1 md:grid-cols-2 place-content-center gap-6 p-4 w-10/12
+  }
+
+  .home .top div {
+    @apply bg-slate-900 px-4 md:p-8
   }
 
   /* nav */

@@ -7,7 +7,6 @@ const Home: NextPage = () => {
     <Layout home>
       <div className='home'>
         <div className='top'>
-
           <div className='intro'>
             <p>Hello,</p>
             <p>My name is Jason Fleet, I am a Software Developer.</p>
@@ -18,7 +17,7 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div className='middle'>
+        <div className='links'>
 
           <div className='intro-small'>
             <Link href="/demo-pages">
@@ -56,6 +55,12 @@ const Home: NextPage = () => {
             </Link>
           </div>
 
+        </div>
+
+        <div className='description'>
+          <div className='intro-small'>
+            <p>Except fo the <Link href="/games"><a>Games</a></Link> it&apos;s all a work in progress...</p>
+          </div>
         </div>
       </div>
     </Layout>

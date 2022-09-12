@@ -19,11 +19,11 @@ const Games: NextPage = () => {
           <a>Rock, Paper, Scissors</a>
         </Link>
       </div>
-      <div>
+      {/* <div>
         <Link href="games/tic-tac-toe">
           <a>Tic-Tac-Toe</a>
         </Link>
-      </div>
+      </div> */}
     </div>
     </div>
   </Layout>
