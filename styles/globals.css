@@ -82,7 +82,15 @@
   }
 
   .home .description div {
-    @apply bg-slate-900 p-6
+    @apply bg-slate-900 p-4
+  }
+
+  .home .divider {
+    @apply mx-auto px-4 w-10/12
+  }
+
+  .home .divider hr {
+    @apply border-2 border-slate-600
   }
 
   .home .links {
@@ -90,7 +98,7 @@
   }
 
   .home .links div {
-    @apply bg-slate-900 p-6
+    @apply bg-slate-900 p-2
   }
 
   .home .intro .contact {
@@ -107,6 +115,11 @@
 
   .home .intro ul {
     @apply pb-2
+  }
+
+
+  .home .intro-small {
+    @apply text-2xl
   }
 
   .home .top {

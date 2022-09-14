@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <hr className='mx-auto w-1/3 sm:w-1/3' />
+        <div className='divider'><hr/></div>
 
         <div className='links'>
 
@@ -53,11 +53,11 @@ const Home: NextPage = () => {
 
         </div>
 
-        <hr className='mx-auto w-1/3 sm:w-1/3' />
+        <div className='divider'><hr/></div>
 
         <div className='description'>
           <div className='intro-small'>
-            <p>Except for the <Link href="/games"><a>Games</a></Link> it&apos;s all a work in progress...</p>
+            <p>Except for <Link href="/games/rock-paper-scissors"><a>Rock-Paper-Scissors</a></Link> it&apos;s all a work in progress.</p>
           </div>
         </div>
 
@@ -70,7 +70,7 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <hr className='mx-auto w-1/3 sm:w-1/3' />
+        <div className='divider'><hr/></div>
 
         <div className='description'>
           <div className='intro-small'>
@@ -78,6 +78,7 @@ const Home: NextPage = () => {
               <Link href="/contact">
                 <a>Contact</a>
               </Link>
+              <p className='pt-2'>Email: <a href='mail:jason.fleet@googlemail.com'>jason.fleet@googlemail.com</a></p>
             </div>
           </div>
         </div>
