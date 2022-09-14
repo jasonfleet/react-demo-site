@@ -11,6 +11,7 @@ type Answer = {
 }
 
 interface QuestionsProps {
+  categories: Array<string>,
   difficulty: string,
   limit: number,
   onEndGame: Function,
@@ -21,7 +22,7 @@ interface QuestionsProps {
 
 const questionsService: QuestionServices = new QuestionServices()
 
-const QuestionAnswer = ({ difficulty, limit, questionCount, onAnswer, onEndGame, state }: QuestionsProps) => {
+const QuestionAnswer = ({ categories, difficulty, limit, questionCount, onAnswer, onEndGame, state }: QuestionsProps) => {
   const [answers, setAnswers] = useState<Array<Answer>>([])
   const [answerIndex, setAnswerIndex] = useState<string>('')
   const [question, setQuestion] = useState<QuestionObject | null>(null)
@@ -35,7 +36,7 @@ const QuestionAnswer = ({ difficulty, limit, questionCount, onAnswer, onEndGame,
 
   useEffect(() => {
     const getQuestions = () => {
-      questionsService.getNextQuestion(difficulty)
+      questionsService.getNextQuestion(difficulty, categories)
       .then(res => {
         let ans: Array<Answer> = []
         let ansIndex = 0

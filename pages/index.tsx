@@ -57,7 +57,7 @@ const Home: NextPage = () => {
 
         <div className='description'>
           <div className='intro-small'>
-            <p>Except fo the <Link href="/games"><a>Games</a></Link> it&apos;s all a work in progress...</p>
+            <p>Except for the <Link href="/games"><a>Games</a></Link> it&apos;s all a work in progress...</p>
           </div>
         </div>
 

@@ -165,8 +165,12 @@
     @apply text-center
   }
 
-  .quiz-categories>* {
+  .quiz-categories > * {
     @apply my-2
+  }
+
+  .quiz-categories .selected {
+    @apply text-xl after:content-['<<'] before:content-['>>']
   }
 
   .quiz-difficulty>* {

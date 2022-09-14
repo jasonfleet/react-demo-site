@@ -2,23 +2,36 @@ import { memo, useState } from "react"
 import CategoriesSWR, { QuizCategories } from './categories-swr'
 
 interface CategoriesProps {
-  onChange: Function,
   disabled: boolean,
+  selectedCategories: Array<string>,
+  onChange: Function,
 }
 
-const Categories = ({ onChange, disabled }: CategoriesProps) => {
-  const categories: QuizCategories = CategoriesSWR()
+const Categories = ({ selectedCategories, disabled, onChange }: CategoriesProps) => {
+  const quizCategories: QuizCategories = CategoriesSWR()
+
+  const isSelected = (category: string) => {
+    return selectedCategories.includes(category)
+  }
+
+  const selected = (category: string) => {
+    onChange(category)
+  }
 
   return <div>
     <h2>Categories</h2>
     <ul className='quiz-categories'>
-      {categories && categories.categories && Object.keys(categories.categories).map(category => {
-        return <li key={category}>
-            <button className='quiz-button' disabled={disabled}>{category}</button>
+      {quizCategories && quizCategories.categories && Object.keys(quizCategories.categories).map(category => {
+        return <li key={category} className={isSelected(category) ? 'selected' : ''}>
+          <button
+            className={'quiz-button'}
+            disabled={disabled}
+            onClick={() => selected(category)}
+          >{category}</button>
         </li>
       })}
-      {categories && categories.isError && console.log()}
-      {categories && categories.isLoading && <div>isLoading</div>}
+      {quizCategories && quizCategories.isError && console.log()}
+      {quizCategories && quizCategories.isLoading && <div>isLoading</div>}
     </ul>
   </div>
 }

@@ -16,6 +16,7 @@ export enum GameState {
 }
 
 function Quiz() {
+  const [selectedCategories, setCatagories] = useState<Array<string>>([])
   const [difficulty, setDifficulty] = useState<string>('easy')
   const [limit, setLimit] = useState<number>(3)
   const [questionCount, setQuestionCount] = useState<number>(0)
@@ -50,8 +51,12 @@ function Quiz() {
     }
   }
 
-  const onCategoryClick = (category: string) => {
-    console.log(category)
+  const onCategorySelect = (category: string) => {
+    if (selectedCategories.includes(category)) {
+      setCatagories(selectedCategories.filter(cat => category !== cat))
+    } else {
+      setCatagories(selectedCategories.concat(category))
+    }
   }
 
   const startGame = () => {
@@ -72,11 +77,16 @@ function Quiz() {
       <div className='title'>Quiz</div>
       <div className='grid grid-cols-3'>
         <div>
-          <Categories onChange={(category: string) => onCategoryClick(category)} disabled={state !== GameState.WaitingToStart} />
+          <Categories
+            disabled={state !== GameState.WaitingToStart}
+            onChange={(category: string) => onCategorySelect(category)}
+            selectedCategories={selectedCategories}
+          />
         </div>
 
         <div className='flex flex-col'>
           <QuestionAnswer
+            categories={selectedCategories}
             difficulty={difficulty}
             limit={limit}
             onAnswer={(isCorrect: boolean) => answered(isCorrect)}
