@@ -8,14 +8,12 @@ const Slick = () => {
   const [file, setFile] = useState(null)
 
   const process = () => {
-    console.log(file.files[0])
-
     let fileReader = new FileReader
 
     fileReader.onloadend = () => {
       let process = new Process
 
-      process.processOrdersCsv(fileReader.result)
+      process.processOrdersCsv(fileReader.result?.toString())
     }
 
     fileReader.readAsText(file.files[0])

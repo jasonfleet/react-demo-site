@@ -37,71 +37,71 @@ const QuestionAnswer = ({ categories, difficulty, limit, questionCount, onAnswer
   useEffect(() => {
     const getQuestions = () => {
       questionsService.getNextQuestion(difficulty, categories)
-      .then(res => {
-        let ans: Array<Answer> = []
-        let ansIndex = 0
-        let correctAnswerIndex = Math.floor(Math.random() * 4)
-        let index: string = ''
+        .then(res => {
+          let ans: Array<Answer> = []
+          let ansIndex = 0
+          let correctAnswerIndex = Math.floor(Math.random() * 4)
+          let index: string = ''
 
-        for (let i = 0, j = res.incorrectAnswers.length + 1; i < j; i++) {
-          index = String.fromCharCode(65 + i)
+          for (let i = 0, j = res.incorrectAnswers.length + 1; i < j; i++) {
+            index = String.fromCharCode(65 + i)
 
-          if (correctAnswerIndex === i) {
-            ans.push({
-              answer: res.correctAnswer,
-              index: index,
-              correct: true,
-            })
-          } else {
-            ans.push({
-              answer: res.incorrectAnswers[ansIndex++],
-              index: index,
-              correct: false,
-            })
+            if (correctAnswerIndex === i) {
+              ans.push({
+                answer: res.correctAnswer,
+                index: index,
+                correct: true,
+              })
+            } else {
+              ans.push({
+                answer: res.incorrectAnswers[ansIndex++],
+                index: index,
+                correct: false,
+              })
+            }
           }
-        }
 
-        setQuestion(res)
-        setAnswerIndex('')
-        setAnswers(ans)
-      })
+          setQuestion(res)
+          setAnswerIndex('')
+          setAnswers(ans)
+        })
     }
     if (!questionsService.loading && state === GameState.WaitingForAnswer) {
       getQuestions()
     }
-  }, [difficulty, state])
+  }, [categories, difficulty, state])
 
   return <>
     <h2>Question {questionCount > 0 ? questionCount : ''}</h2>
     {
       question && <div>
         <div className='quiz-question'>{question.question}</div>
-          <div className=''>
-            {
-              answers.map((answer: Answer, i: number) => {
-                return <div
-                  className={'quiz-answer' + (answerIndex !== '' && answerIndex === answer.index ? answer.correct ? ' quiz-answer-right' : ' quiz-answer-wrong' : '')}
-                  key={'quiz-answer-' + i}
-                >
-                  {answer.index}.&nbsp;
-                  {answer.answer}
-                </div>
-              })
-            }
-          </div>
-          <div className='flex flex-row gap-4 justify-center mt-8'>
-            {
-              answers.map((answer: Answer, i: number) => {
-                return <button
-                  className={'quiz-answer-button' + (answerIndex !== '' && answerIndex === answer.index ? answer.correct ? ' quiz-answer-button-right' : ' quiz-answer-button-wrong' : '') }
-                  key={'quiz-answer-button-' + i}
-                  onClick={() => answered(answer)}
-                >
-                  {answer.index}
-                </button>
-              })
-            }
-          </div>
+        <div className=''>
+          {
+            answers.map((answer: Answer, i: number) => {
+              return <div
+                className={'quiz-answer' + (answerIndex !== '' && answerIndex === answer.index ? answer.correct ? ' quiz-answer-right' : ' quiz-answer-wrong' : '')}
+                key={'quiz-answer-' + i}
+              >
+                {answer.index}.&nbsp;
+                {answer.answer}
+              </div>
+            })
+          }
+        </div>
+        <div className='flex flex-row gap-4 justify-center mt-8'>
+          {
+            answers.map((answer: Answer, i: number) => {
+              return <button
+                className={'quiz-answer-button' + (answerIndex !== '' && answerIndex === answer.index ? answer.correct ? ' quiz-answer-button-right' : ' quiz-answer-button-wrong' : '')}
+                key={'quiz-answer-button-' + i}
+                onClick={() => answered(answer)}
+              >
+                {answer.index}
+              </button>
+            })
+          }
+        </div>
       </div>
     }
   </>
