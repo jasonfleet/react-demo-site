@@ -1,11 +1,12 @@
-import { MouseEvent, useState } from 'react';
+import { AnyObject } from 'immer/dist/internal';
+import { MouseEvent, Ref, useState } from 'react';
 import Layout from '../components/layout'
 import { Process } from '../components/order-view/Process';
 
 const Slick = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
-  const [file, setFile] = useState(null)
+  const [file, setFile] = useState<AnyObject>(null)
 
   const process = () => {
     let fileReader = new FileReader
@@ -19,7 +20,7 @@ const Slick = () => {
       }
     }
 
-    if (file !== null && file.files !== null) {
+    if (file !== null) {
       fileReader.readAsText(file.files[0])
     }
   }
