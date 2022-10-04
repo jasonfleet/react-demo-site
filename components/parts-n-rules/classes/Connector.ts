@@ -1,5 +1,5 @@
-import Node from "./Node"
-import Edge from "./Edge"
+import Node from './Node'
+import Edge from './Edge'
 
 class Connector extends Node {
   edgesIn: Array<Edge> = []

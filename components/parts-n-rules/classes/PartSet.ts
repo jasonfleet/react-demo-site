@@ -1,6 +1,6 @@
-import Node from "./Node"
-import Edge from "./Edge"
-import Part from "./Part"
+import Node from './Node'
+import Edge from './Edge'
+import Part from './Part'
 
 type PartSetType = '' | 'aging' | 'cycle'
 

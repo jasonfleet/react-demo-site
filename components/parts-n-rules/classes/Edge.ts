@@ -1,4 +1,4 @@
-import Node from "./Node";
+import Node from './Node'
 
 class Edge {
   from: Node | null = null

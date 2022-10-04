@@ -1,5 +1,5 @@
 import { CSSProperties, MouseEvent } from "react"
-import NodeView, { NodeViewProps } from "./NodeView"
+import NodeView, { NodeViewProps } from "./classes/NodeView"
 
 interface PartViewProps extends NodeViewProps { }
 

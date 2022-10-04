@@ -1,5 +1,5 @@
 import { CSSProperties, MouseEvent, MouseEventHandler, useState } from "react"
-import NodeView from "./NodeView"
+import NodeView from "./classes/NodeView"
 import ConnectorView from "./ConnectorView"
 import PartView from "./PartView"
 import Tools from "./tools"
@@ -21,21 +21,22 @@ const DiagramComponent = () => {
 
     switch (part) {
       case PartViews.PartSet:
-        view = new PartSetView({ label: 'PartSetView', x: 0, y: 200})
+        view = new PartSetView({ label: 'PartSetView', x: 0, y: 200 })
         break
       case PartViews.Part:
-        view = new PartView({ label: 'PartView', x: 0, y: 200})
+        view = new PartView({ label: 'PartView', x: 0, y: 200 })
         break
       case PartViews.Connector:
-        view = new ConnectorView({ label: 'ConnectorView', x: 0, y: 100})
+        view = new ConnectorView({ label: 'ConnectorView', x: 0, y: 100 })
         break
       default:
         console.log('no part', part)
     }
 
     if (view !== null) {
-        setViews([ ...views, view]
-    )}
+      setViews([...views, view]
+      )
+    }
   }
 
   const clickedOn = (e: MouseEvent<HTMLDivElement>) => {
@@ -52,7 +53,7 @@ const DiagramComponent = () => {
   }
 
   return <>
-    <Tools onAddPart={ (part: PartViews) => addPart(part) } />
+    <Tools onAddPart={(part: PartViews) => addPart(part)} />
     <div
       style={styles}
       onClick={(e: MouseEvent<HTMLDivElement>) => clickedOn(e)}

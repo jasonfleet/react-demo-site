@@ -1,9 +1,9 @@
 import { Component, CSSProperties, ReactElement, useState } from "react"
-import NodeView, { NodeViewProps } from "./NodeView"
+import NodeView, { NodeViewProps } from "./classes/NodeView"
 
 interface PartViewProps extends NodeViewProps { }
 
-class ConnectorView extends NodeView  {
+class ConnectorView extends NodeView {
 
   constructor(props: PartViewProps) {
     super(props)

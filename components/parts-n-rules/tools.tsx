@@ -4,7 +4,7 @@ interface ToolsProps {
   onAddPart: Function
 }
 
-const Tools = ({onAddPart}: ToolsProps) => {
+const Tools = ({ onAddPart }: ToolsProps) => {
 
   return <div className='fixed right-0 rounded-md top-0 z-50'>
     <div className='flex flex-auto'>

@@ -18,7 +18,7 @@ export enum GameState {
 function Quiz() {
   const [selectedCategories, setCatagories] = useState<Array<string>>([])
   const [difficulty, setDifficulty] = useState<string>('easy')
-  const [limit, setLimit] = useState<number>(3)
+  const [limit, setLimit] = useState<number>(3)orders
   const [questionCount, setQuestionCount] = useState<number>(0)
   const [score, setScore] = useState<number>(0)
   const [state, setState] = useState<GameState>(GameState.WaitingToStart)
@@ -46,7 +46,7 @@ function Quiz() {
     if (questionCount === limit) {
       setState(GameState.GameOver)
     } else {
-    setQuestionCount(questionCount + 1)
+      setQuestionCount(questionCount + 1)
       setState(GameState.WaitingForAnswer)
     }
   }
@@ -90,7 +90,7 @@ function Quiz() {
             difficulty={difficulty}
             limit={limit}
             onAnswer={(isCorrect: boolean) => answered(isCorrect)}
-            onEndGame={() => endGame() }
+            onEndGame={() => endGame()}
             questionCount={questionCount}
             state={state}
           />
@@ -103,7 +103,7 @@ function Quiz() {
         </div>
 
         <div className='col-start-2'>
-          {state === GameState.GameOver && <GameOver limit={limit} onStartGame={() => endGame() } score={score} />}
+          {state === GameState.GameOver && <GameOver limit={limit} onStartGame={() => endGame()} score={score} />}
           {state === GameState.WaitingToStart && <button className='quiz-big-button mt-12 ' onClick={() => startGame()} type='button'>Start</button>}
           {state === GameState.WaitingToContinue && <button className='quiz-big-button mt-12' onClick={() => continueGame()} type='button'>Continue</button>}
         </div>

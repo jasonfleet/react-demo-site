@@ -1,5 +1,5 @@
 import { CSSProperties } from "react"
-import NodeView, { NodeViewProps } from "./NodeView"
+import NodeView, { NodeViewProps } from "./classes/NodeView"
 
 interface PartSetProps extends NodeViewProps { }
 
