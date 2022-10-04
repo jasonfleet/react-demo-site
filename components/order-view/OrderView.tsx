@@ -73,12 +73,11 @@ const OrderView = () => {
       <div className='data-value monies' title='product_line_price'>75.00</div>
       <div className='line-image' title='product_colour_image_url'>
         <div>
-
-          <img
+          {/* <img
             alt='Round-Neck Sweat (Unisex)'
             src='https://dummyimage.com/210x280/ff0000/f8f8f8.png&text=Round-Neck+Sweat+(Unisex)'
             srcSet='https://dummyimage.com/180x240/ff0000/f8f8f8.png&text=Round-Neck+Sweat+(Unisex) 180w, https://dummyimage.com/210x280/ff0000/f8f8f8.png&text=Round-Neck+Sweat+(Unisex) 210w'
-            sizes='(max-width: 210px) 180px, 210px' />
+            sizes='(max-width: 210px) 180px, 210px' /> */}
         </div>
         <div>Hover</div>
       </div>
@@ -101,11 +100,11 @@ const OrderView = () => {
       <div className='data-value monies' title='product_line_price'>80.00</div>
       <div className='line-image' title='product_colour_image_url'>
         <div>
-          <img
+          {/* <img
             alt='Embroidered Jersey Cardigan'
             src='https://dummyimage.com/210x280/ff0000/f8f8f8.png&text=Embroidered+Jersey+Cardigan'
             srcSet='https://dummyimage.com/180x240/ff0000/f8f8f8.png&text=Embroidered+Jersey+Cardigan 180w, https://dummyimage.com/210x280/ff0000/f8f8f8.png&text=Embroidered+Jersey+Cardigan 210w'
-            sizes='(max-width: 210px) 180px, 210px' />
+            sizes='(max-width: 210px) 180px, 210px' /> */}
         </div>
         <div>Hover</div>
       </div>
@@ -128,11 +127,11 @@ const OrderView = () => {
       <div className='data-value monies' title='product_line_price'>80.00</div>
       <div className='line-image' title='product_colour_image_url'>
         <div>
-          <img
+          {/* <img
             alt='Embroidered Jersey Cardigan'
             src='https://dummyimage.com/210x280/ff0000/f8f8f8.png&text=Embroidered+Jersey+Cardigan'
             srcSet='https://dummyimage.com/180x240/ff0000/f8f8f8.png&text=Embroidered+Jersey+Cardigan 180w, https://dummyimage.com/210x280/ff0000/f8f8f8.png&text=Embroidered+Jersey+Cardigan 210w'
-            sizes='(max-width: 210px) 180px, 210px' />
+            sizes='(max-width: 210px) 180px, 210px' /> */}
         </div>
         <div>Hover</div>
       </div>
@@ -155,11 +154,11 @@ const OrderView = () => {
       <div className='data-value monies' title='product_line_price'>45.00</div>
       <div className='line-image' title='product_colour_image_url'>
         <div>
-          <img
+          {/* <img
             alt='Polo Shirt Unisex)'
             src='https://dummyimage.com/210x280/fefefe/080808.png&text=Polo+Shirt+(Unisex)'
             srcSet='https://dummyimage.com/180x240/fefefe/080808.png&text=Polo+Shirt+(Unisex) 180w, https://dummyimage.com/210x280/fefefe/080808.png&text=Polo+Shirt+(Unisex) 210w'
-            sizes='(max-width: 210px) 180px, 210px' />
+            sizes='(max-width: 210px) 180px, 210px' /> */}
         </div>
         <div>Hover</div>
       </div>
@@ -182,11 +181,11 @@ const OrderView = () => {
       <div className='data-value monies' title='product_line_price'>45.00</div>
       <div className='line-image' title='product_colour_image_url'>
         <div>
-          <img
+          {/* <img
             alt='Polo Shirt Unisex)'
             src='https://dummyimage.com/210x280/fefefe/080808.png&text=Polo+Shirt+(Unisex)'
             srcSet='https://dummyimage.com/180x240/fefefe/080808.png&text=Polo+Shirt+(Unisex) 180w, https://dummyimage.com/210x280/fefefe/080808.png&text=Polo+Shirt+(Unisex) 210w'
-            sizes='(max-width: 210px) 180px, 210px' />
+            sizes='(max-width: 210px) 180px, 210px' /> */}
         </div>
         <div>Hover</div>
       </div>
