@@ -17,11 +17,11 @@ const Slick = () => {
         let result = fileReader.result.toString()
         process.processOrdersCsv(result)
       }
-
     }
 
-    fileReader.readAsText(file.files[0])
-
+    if (file !== null && file.files !== null) {
+      fileReader.readAsText(file.files[0])
+    }
   }
 
   const submit = (e: MouseEvent<HTMLButtonElement>) => {
