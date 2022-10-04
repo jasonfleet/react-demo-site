@@ -6,7 +6,7 @@ import { Process } from '../components/order-view/Process';
 const Slick = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
-  const [file, setFile] = useState<AnyObject>(null)
+  const [file, setFile] = useState<AnyObject | null>(null)
 
   const process = () => {
     let fileReader = new FileReader
