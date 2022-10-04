@@ -18,7 +18,7 @@ export enum GameState {
 function Quiz() {
   const [selectedCategories, setCatagories] = useState<Array<string>>([])
   const [difficulty, setDifficulty] = useState<string>('easy')
-  const [limit, setLimit] = useState<number>(3)orders
+  const [limit, setLimit] = useState<number>(3)
   const [questionCount, setQuestionCount] = useState<number>(0)
   const [score, setScore] = useState<number>(0)
   const [state, setState] = useState<GameState>(GameState.WaitingToStart)
