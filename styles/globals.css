@@ -61,7 +61,6 @@
 
 @layer component {
 
-
   /* contact */
   .contact-block {
     @apply bg-slate-600 p-3 rounded-md
@@ -316,13 +315,13 @@
     @apply hidden md:inline-block
   }
 
-  .line-image:active div:first-child, .line-image:hover div:first-child {
+  /* .line-image:active div:first-child, .line-image:hover div:first-child {
     @apply top-0 left-0 md:block md:fixed md:h-0 md:w-full
   }
 
   .line-image:active div:first-child img, .line-image:hover div:first-child img {
     @apply md:mx-auto md:inline-block
-  }
+  } */
 
   .monies {
     @apply md:text-right md:justify-self-end
