@@ -1,46 +1,52 @@
-import { MouseEvent, useState } from 'react'
+import { Organization } from './Organization'
 
-const OrderView = () => {
+interface OrderViewInterface {
+  organization: Organization
+}
 
-  return <>
+const OrderView = ({ organization }: OrderViewInterface) => {
+
+  console.log('org', organization)
+
+  return <div>
     <section>
       <div className='organization'>
         <div className='data-title'>URN</div>
-        <div className='data-value' title='school_URN'>114519</div>
+        <div className='data-value' title='school_URN'>{organization.schoolUrn}</div>
         <div className='data-title'>Organization</div>
-        <div className='data-value' title='organization_name'>PAW C Place</div>
+        <div className='data-value' title='organization_name'>{organization.organization_name}</div>
         <div className='data-title'>Telephone</div>
-        <div className='data-value' title='organization_telephone'><a href='tel:01234 567890'>01234 567890</a></div>
+        <div className='data-value' title='organization_telephone'><a href='tel:01234 567890'>{organization.organization_telephone}</a></div>
         <div className='data-title'>Email</div>
-        <div className='data-value' title='organization_email'><a href='mailto:admin@www.pawc.s'>admin@www.pawc.s</a></div>
+        <div className='data-value' title='organization_email'><a href='mailto:admin@www.pawc.s'>{organization.organization_email}</a></div>
         <div className='data-title'>WWW</div>
-        <div className='data-value' title='organization_url'><a href='http://www.pawc.s' rel='noreferrer' target='_blank'>http://www.pawc.s</a></div>
+        <div className='data-value' title='organization_url'><a href='http://www.pawc.s' rel='noreferrer' target='_blank'>{organization.organization_url}</a></div>
       </div>
     </section>
 
     <section className='order'>
       <div className='data-title'>Order&nbsp;ID</div>
-      <div className='data-value' title='order_id'>1197</div>
+      <div className='data-value' title='order_id'>{organization.orders[0].order_id}</div>
       <div className='data-title'>Date</div>
-      <div className='data-value' title='order_date'>27/06/2016 17:01:48</div>
+      <div className='data-value' title='order_date'>{organization.orders[0].order_date}</div>
       <div className='data-title'>Name</div>
-      <div className='data-value' title='order_name'>PAW C Place</div>
+      <div className='data-value' title='order_name'>{organization.orders[0].order_name}</div>
       <div className='data-title'>Contact</div>
-      <div className='data-value' title='order_contact_name'>Angela Unlikely</div>
+      <div className='data-value' title='order_contact_name'>{organization.orders[0].order_contact_name}</div>
       <div className='data-title'>Address</div>
-      <div className='data-value' title='order_delivery_address_1,2,3'>PAW C Place, High Street</div>
+      <div className='data-value' title='order_delivery_address_1,2,3'>{organization.orders[0].order_delivery_address_1}</div>
       <div className='data-title'>Town</div>
-      <div className='data-value' title='order_delivery_town'>Pevensey</div>
+      <div className='data-value' title='order_delivery_town'>{organization.orders[0].order_delivery_town}</div>
       <div className='data-title'>County</div>
-      <div className='data-value' title='order_delivery_county'>East Sussex</div>
+      <div className='data-value' title='order_delivery_county'>{organization.orders[0].order_delivery_county}</div>
       <div className='data-title'>Postcode</div>
-      <div className='data-value' title='order_delivery_postcode'>AB12 3CD</div>
+      <div className='data-value' title='order_delivery_postcode'>{organization.orders[0].order_delivery_postcode}</div>
       <div className='data-title'>Email</div>
-      <div className='data-value' title='order_email_address'><a href='mailto:a.unlikely@pawc.s'>a.unlikely@pawc.s</a></div>
+      <div className='data-value' title='order_email_address'><a href='mailto:a.unlikely@pawc.s'></a>{organization.orders[0].order_email_address}</div>
       <div className='data-title'>Telephone</div>
-      <div className='data-value' title='order_telephone'><a href='tel:01234 567890'>01234 567890</a></div>
+      <div className='data-value' title='order_telephone'><a href='tel:'></a>{organization.orders[0].order_telephone}</div>
       <div className='data-title'>Bulk&nbsp;Total</div>
-      <div className='data-value' title='organization_bulk_order_total'>325.00</div>
+      <div className='data-value' title='organization_bulk_order_total'>{organization.orders[0].organization_bulk_order_total}</div>
     </section>
 
     <section className='lines'>
@@ -191,7 +197,7 @@ const OrderView = () => {
       </div>
 
     </section>
-  </>
+  </div>
 
 }
 

@@ -41,6 +41,9 @@ export class Order {
 
     if (product === undefined) {
       product = new Product()
+
+      this.products.push(product)
+
       product.extract(data)
     }
   }

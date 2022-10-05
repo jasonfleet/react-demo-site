@@ -31,7 +31,33 @@
   .title {
     @apply pb-2 pt-4 block font-thin text-6xl text-center
   }
+
+  /* SLICK STICH ODER VIEW */
+  body {
+    @apply w-full
+  }
+
+  section {
+    @apply border-2 border-slate-800 box-content mx-3 my-2 p-2 rounded-xl
+  }
+
+  .sdl-2 {
+    display: grid;
+    grid-template-columns: min-content 2fr;
+  }
+
+  .sdl-8 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(min-content, 1fr));
+    grid-auto-flow: row;
+  }
+
+  .sdl-9 {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(min-content, 1fr));
+  }
 }
+
 
 @layer component {
 
@@ -252,4 +278,65 @@
     @apply pb-2 pt-4 block text-6xl text-center
   }
 
+  /* slick stictch oder view */
+
+  .data-header {
+    @apply hidden md:inline-block font-bold max-w-min pr-2
+  }
+
+  .data-value {
+    @apply min-w-max md:pr-2
+  }
+
+  .data-title {
+    @apply font-bold max-w-min pr-2
+  }
+
+  .lines {
+    @apply sdl-2 md:sdl-9
+  }
+
+  .lines .data-title {
+    @apply md:hidden
+  }
+
+  .line-data {
+    @apply grid justify-start
+  }
+
+  .line-image {
+    @apply col-span-2 md:col-span-1 border-8 border-slate-800
+  }
+
+  .line-image div:first-child {
+    @apply md:hidden
+  }
+
+  .line-image div:last-child {
+    @apply hidden md:inline-block
+  }
+
+  .line-image:active div:first-child, .line-image:hover div:first-child {
+    @apply top-0 left-0 md:block md:fixed md:h-0 md:w-full
+  }
+
+  .line-image:active div:first-child img, .line-image:hover div:first-child img {
+    @apply md:mx-auto md:inline-block
+  }
+
+  .monies {
+    @apply md:text-right md:justify-self-end
+  }
+
+  .organization {
+    @apply grid sdl-2
+  }
+
+  .order {
+    @apply sdl-2 md:sdl-8
+  }
+
+  hr {
+    @apply w-10/12 border-2 border-slate-900
+  }
 }

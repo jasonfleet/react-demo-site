@@ -25,6 +25,8 @@ export class Organization {
 
     if (order === undefined) {
       order = new Order()
+      this.orders.push(order)
+
       order.extract(data)
     }
 
