@@ -56,10 +56,6 @@
     display: grid;
     grid-template-columns: repeat(9, minmax(min-content, 1fr));
   }
-}
-
-
-@layer component {
 
   /* contact */
   .contact-block {
