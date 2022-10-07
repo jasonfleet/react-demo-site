@@ -12,13 +12,24 @@
     @apply bg-slate-700 text-slate-200 h-screen
   }
 
+  nav {
+    @apply bg-slate-900 text-slate-100
+  }
+
   option {
     @apply bg-slate-700
+  }
+
+  section {
+    @apply border-2 border-slate-800 box-content mx-3 my-2 p-2 rounded-xl
   }
 
   select {
     @apply bg-slate-700 py-1 rounded-md
   }
+}
+
+@layer components {
 
   #__next {
     @apply h-full flex flex-col
@@ -30,15 +41,6 @@
 
   .title {
     @apply pb-2 pt-4 block font-thin text-6xl text-center
-  }
-
-  /* SLICK STICH ODER VIEW */
-  body {
-    @apply w-full
-  }
-
-  section {
-    @apply border-2 border-slate-800 box-content mx-3 my-2 p-2 rounded-xl
   }
 
   .sdl-2 {
@@ -126,9 +128,6 @@
   }
 
   /* nav */
-  nav {
-    @apply bg-slate-900 text-slate-100
-  }
 
   .nav-button {
     @apply m-2 font-thin text-xl

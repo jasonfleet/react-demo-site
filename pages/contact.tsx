@@ -22,6 +22,10 @@ const Contact = () => {
       <form className='contact-form'>
         <div className='grid justify-center gap-4'>
 
+          <div className='text-slate-100 text-center p-2'>
+            (not a functioning component)
+          </div>
+
           <div className='contact-block'>
             <div>
               <input
@@ -32,6 +36,8 @@ const Contact = () => {
               />
             </div>
           </div>
+
+
 
           <div>
             <div className='contact-block'>
@@ -53,6 +59,11 @@ const Contact = () => {
               >
                 Submit
               </button>
+
+            </div>
+
+            <div className='text-slate-100 text-center p-2'>
+              (not a functioning component)
             </div>
           </div>
         </div>
