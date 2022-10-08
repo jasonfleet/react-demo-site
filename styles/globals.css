@@ -6,6 +6,7 @@
 @import 'games.css';
 @import 'home.css';
 @import 'contact.css';
+@import 'nav.css';
 @import 'quiz.css';
 @import 'rock-paper-scissors.css';
 @import 'slick.css';
@@ -46,12 +47,6 @@
 
   .title {
     @apply pb-2 pt-4 block font-thin text-6xl text-center
-  }
-
-  /* nav */
-
-  .nav-button {
-    @apply m-2 font-thin text-xl
   }
 
 }

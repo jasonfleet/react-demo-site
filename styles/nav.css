@@ -1,0 +1,9 @@
+@tailwind components;
+
+@layer components {
+
+  .nav-button {
+    @apply m-2 font-thin text-xl
+  }
+
+}
