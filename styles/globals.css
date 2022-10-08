@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'food-orders.css';
 @import 'contact.css';
 @import 'quiz.css';
 @import 'rock-paper-scissors.css';
@@ -62,19 +63,6 @@
   .sdl-9 {
     display: grid;
     grid-template-columns: repeat(9, minmax(min-content, 1fr));
-  }
-
-  /* food orders */
-  .food-orders {
-    @apply font-food-orders font-thin
-  }
-
-  .food-orders .title {
-    @apply pb-2 pt-4 block font-thin text-6xl text-center
-  }
-
-  .food-orders .h1 {
-    @apply pb-2 pt-4 block font-thin text-6xl text-center
   }
 
   /* games */
