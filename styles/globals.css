@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import 'food-orders.css';
+@import 'games.css';
 @import 'contact.css';
 @import 'quiz.css';
 @import 'rock-paper-scissors.css';
@@ -63,23 +64,6 @@
   .sdl-9 {
     display: grid;
     grid-template-columns: repeat(9, minmax(min-content, 1fr));
-  }
-
-  /* games */
-  .games {
-    @apply font-normal
-  }
-
-  .games a {
-    @apply pb-2 pt-4 block font-thin text-4xl text-center
-  }
-
-  .games h1 {
-    @apply pb-2 pt-4 block font-thin text-6xl text-center
-  }
-
-  .games h2 {
-    @apply pb-2 pt-4 block font-thin text-4xl text-center
   }
 
   /* home */
