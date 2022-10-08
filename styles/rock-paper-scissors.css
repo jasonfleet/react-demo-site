@@ -1,0 +1,38 @@
+@tailwind components;
+
+@layer components {
+
+ .rock-paper-scissors {
+    @apply grid place-content-center
+  }
+
+  .rock-paper-scissors .choose {
+    @apply m-3 font-quiz-title text-4xl mx-auto
+  }
+
+  .rock-paper-scissors .play-button {
+    @apply m-3 font-quiz-title text-4xl
+  }
+
+  .rock-paper-scissors .result {
+    @apply font-quiz-title text-4xl mt-12 mx-auto align-bottom
+  }
+
+  .rock-paper-scissors .timer {
+    @apply font-quiz-title text-8xl mx-auto align-bottom
+  }
+
+  /* tickets */
+  .tickets-filter-form input {
+    @apply text-slate-800 bg-slate-200 p-1
+  }
+
+  .tickets-filter-form option {
+    @apply text-slate-800 bg-slate-200 p-0
+  }
+
+  .tickets-filter-form select {
+    @apply text-slate-800 bg-slate-200 p-1
+  }
+
+}
