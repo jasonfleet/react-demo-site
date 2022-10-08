@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'quiz.css';
 @import 'tic-tac-toe.css';
 
 @layer base {
@@ -137,82 +138,6 @@
 
   /* parts n rules */
 
-  /* quiz */
-  .quiz-answer {
-    @apply border-2 border-slate-200 rounded-3xl font-bold my-4 px-4 py-2 text-xl text-slate-200
-  }
-
-  .quiz-answer-button {
-    @apply border-2 border-slate-200 font-semibold inline-block rounded-full text-3xl w-20 hover:bg-orange-400
-  }
-
-  .quiz-answer-button-right {
-    @apply bg-lime-600
-  }
-
-  .quiz-answer-button-wrong {
-    @apply bg-red-600
-  }
-
-  .quiz-answer-right {
-    @apply bg-lime-600
-  }
-
-  .quiz-answer-wrong {
-    @apply bg-red-600
-  }
-
-  .quiz-button {
-    @apply bg-lime-600 border-2 border-slate-800 rounded-md font-bold px-3 ring-1 text-xl text-slate-200
-  }
-
-  .quiz-big-button {
-    @apply bg-lime-600 border-2 border-slate-800 font-quiz-title rounded-3xl font-bold px-3 w-full pt-3 ring-1 text-3xl text-slate-200
-  }
-
-  .quiz-categories {
-    @apply text-center
-  }
-
-  .quiz-categories>* {
-    @apply my-2
-  }
-
-  .quiz-categories .selected {
-    @apply text-xl after:content-['<<'] before:content-['>>']
-  }
-
-  .quiz-difficulty>* {
-    @apply my-2
-  }
-
-  .quiz h1 {
-    @apply pb-2 pt-4 block font-quiz-title font-thin text-6xl text-center
-  }
-
-  .quiz h2 {
-    @apply pb-2 pt-4 block font-quiz-title font-thin text-4xl text-center
-  }
-
-  .quiz .title {
-    @apply my-4 py-4 block font-quiz-title font-thin text-8xl text-center
-  }
-
-  .quiz-question {
-    @apply h-28 mb-4 text-2xl text-center
-  }
-
-  .quiz-question-limit {
-    @apply text-center text-lg inline-block w-6
-  }
-
-  .quiz-questions {
-    @apply bg-lime-800
-  }
-
-  .quiz-score {
-    @apply block text-center
-  }
 
   /* rock-paper-scissors */
   .rock-paper-scissors {
