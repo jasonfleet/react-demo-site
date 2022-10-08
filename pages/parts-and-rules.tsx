@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { useState } from 'react'
 import Layout from '../components/layout'
 import DiagramComponent from '../components/parts-n-rules/diagram'
-import DiagramTest from '../components/parts-n-rules/diagram-test'
 import diagramIcon from '../public/icons/account_tree_FILL0_wght100_GRAD0_opsz48.svg'
 
 enum States {
@@ -27,7 +26,6 @@ function PartsAndRules() {
       <p>Draw The Rules</p>
     </div>
 
-    {/* <DiagramTest /> */}
 
     {mode === States.Diagram && <DiagramComponent />}
 

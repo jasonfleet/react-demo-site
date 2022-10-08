@@ -43,6 +43,9 @@ function TicTacToe() {
 
       if (hasWon(playArea, 'o') === true) {
         setGameStatus(GameState.Won)
+        setGrid([...playArea])
+
+        return
       }
 
       let free = []
@@ -69,18 +72,11 @@ function TicTacToe() {
     }
   }
 
-  // useEffect(() => {
-  //   if (player === 'computer') {
-  //     while (true) {
-  //       let r = (Math.random() * 9) - 1
-  //       if (grid[r] === '') {
-  //         grid[r] = 'x'
-  //         setGrid([...grid])
-  //         break
-  //       }
-  //     }
-  //   }
-  // }, [GameState])
+
+  const reset = () => {
+    setGrid([])
+    setGameStatus(GameState.Ready)
+  }
 
   return <Layout>
     <div>
@@ -122,8 +118,10 @@ function TicTacToe() {
       </div>
 
       <div>
-        <div className='tic-tac-toe-status'>
-          {gameStatus === GameState.Ready && <span>ready</span>}
+        <div className='tic-tac-toe-status cursor-pointer' onClick={() => reset()}>
+          {gameStatus === GameState.Ready && <span>Ready<br />Click to Play</span>}
+          {gameStatus === GameState.Lost && <span>You Lost<br />Click Here to Play Again</span>}
+          {gameStatus === GameState.Won && <span>You Won<br />Click Here to Play Again</span>}
         </div>
       </div>
     </div>

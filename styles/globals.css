@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'tic-tac-toe.css';
+
 @layer base {
 
   html {
@@ -231,15 +233,6 @@
 
   .rock-paper-scissors .timer {
     @apply font-quiz-title text-8xl mx-auto align-bottom
-  }
-
-  /* tic-tac-toe */
-  .tic-tac-toe {
-    @apply m-3 font-normal text-2xl
-  }
-
-  .tic-tac-toe-status {
-    @apply font-quiz-title font-thin mt-4 text-4xl text-center
   }
 
   /* tickets */
