@@ -1,0 +1,33 @@
+@tailwind components;
+
+@layer components {
+
+  .home {
+    @apply font-thin gap-4 text-2xl m-auto grid grid-cols-1 p-4 place-content-center w-10/12
+  }
+
+  .home-block {
+    @apply bg-slate-900 p-3 rounded-md
+  }
+
+  .home-contact {
+    @apply home-block
+  }
+
+  .home-demos {
+    @apply flex flex-auto flex-wrap gap-4 min-w-fit
+  }
+
+  .home-demos-link {
+    @apply home-block hover:bg-black
+  }
+
+  .home-github {
+    @apply home-block
+  }
+
+  .home-top {
+    @apply home-block
+  }
+
+}
