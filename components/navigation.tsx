@@ -17,6 +17,10 @@ function Navigation() {
           <a className='nav-button'>Demo Pages</a>
         </Link>
 
+        <Link href="/recipes">
+          <a className='nav-button'>Recipes</a>
+        </Link>
+
         <Link href="/games">
           <a className='nav-button'>Games</a>
         </Link>
@@ -25,9 +29,9 @@ function Navigation() {
           <a className='nav-button'>Parts And Rules</a>
         </Link>
 
-      <Link href="/contact">
-        <a className='nav-button'>Contact</a>
-      </Link>
+        <Link href="/contact">
+          <a className='nav-button'>Contact</a>
+        </Link>
 
       </nav>
     </div>
