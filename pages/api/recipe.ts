@@ -39,29 +39,6 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   const apiKey: string | undefined = process.env.UPSTASH_API_KEY
   const url: string | undefined = process.env.UPSTASH_REDIS_URL
 
-  // if (url !== undefined) {
-  //   // let redis: Redis = new Redis(`redis://:${apiKey}@${url}`)
-  //   let redis: Redis = new Redis(`eu1-known-sole-38512.upstash.io/${apiKey}@${url}`)
-
-  //   // redis.
-
-  //   //   res.status(200).json({ count })
-  // }
-
-  // return await fetch("https://eu1-known-sole-38512.upstash.io/set/foo/pickle", {
-  //   headers: {
-  //     Authorization: "Bearer AZZwASQgZjU3ZmZjMzktMjNlMC00ZTkxLWJjYmQtOGNmNzFjNDhlYzE4ZmI3ZGM1MmVlMmZmNDk5NGEzMGQxNWVmZmFmOGFkMWI="
-  //   }
-  // }).then(response => response.json())
-  //   .then(data => data);
-
-  // const response = await fetch("https://eu1-known-sole-38512.upstash.io/get/foo", {
-  //   headers: {
-  //     Authorization: "Bearer AZZwASQgZjU3ZmZjMzktMjNlMC00ZTkxLWJjYmQtOGNmNzFjNDhlYzE4ZmI3ZGM1MmVlMmZmNDk5NGEzMGQxNWVmZmFmOGFkMWI="
-  //   }
-  // })
-
-  // return await response.json()
 
   await fetch("https://eu1-known-sole-38512.upstash.io/set/foo/pickle", {
     headers: {
@@ -69,26 +46,6 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     }
   }).then(response => response.json())
     .then(data => data);
-  // response.status(200).json({
-  //   body: request.body,
-  //   query: request.query,
-  //   cookies: request.cookies,
-  // });
-
 }
-
-
-// export default function handler(req: NextApiRequest, res: NextApiResponse) {
-//   const APIKey = process.env.UPSTASH_API_KEY
-//   const URL = process.env.UPSTASH_REDIS_URL
-
-//   fetch(URL + 'get/foo', {
-//     headers: {
-//       Authorization: "Bearer " + APIKey
-//     }
-//   }).then(response => response.json())
-//     .then(data => console.log(data));
-
-// }
 
 export default handler

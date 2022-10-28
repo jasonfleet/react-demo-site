@@ -2,7 +2,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import Parser from 'rss-parser'
 
-const parser: Parser<CustomFeed, CustomItem> = new Parser()
+const parser: Parser<{}> = new Parser()
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // const response = await fetch(`https://vegan-sweet-foods.blogspot.com/feeds/posts/default`);
