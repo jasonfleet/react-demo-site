@@ -17,16 +17,20 @@ function Navigation() {
           <a className='nav-button'>Demo Pages</a>
         </Link>
 
-        <Link href="/recipes">
-          <a className='nav-button'>Recipes</a>
-        </Link>
-
         <Link href="/games">
           <a className='nav-button'>Games</a>
         </Link>
 
         <Link href="/parts-and-rules">
           <a className='nav-button'>Parts And Rules</a>
+        </Link>
+
+        <Link href="/raised-garden-beds">
+          <a className='nav-button'>Raised Garden Beds</a>
+        </Link>
+
+        <Link href="/recipes">
+          <a className='nav-button'>Recipes</a>
         </Link>
 
         <Link href="/contact">

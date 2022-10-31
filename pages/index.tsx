@@ -21,16 +21,20 @@ const Home: NextPage = () => {
           <a><div className='home-demos-link'>Games</div></a>
         </Link>
 
-        <Link href="/recipes">
-          <a><div className='home-demos-link'>Recipes</div></a>
-        </Link>
-
         <Link href="/tickets">
           <a><div className='home-demos-link'>Tickets</div></a>
         </Link>
 
         <Link href="/parts-and-rules">
           <a><div className='home-demos-link'>Project - Parts and Rules</div></a>
+        </Link>
+
+        <Link href="/raised-garden-beds">
+          <a className='home-demos-link'>Raised Garden Beds</a>
+        </Link>
+
+        <Link href="/recipes">
+          <a><div className='home-demos-link'>Recipes</div></a>
         </Link>
 
         <Link href="/weather-plus">
