@@ -5,33 +5,33 @@ function Navigation() {
   return (
     <div className=''>
       <nav>
-        <Link href="/">
-          <a className='nav-button'>Home</a>
+        <Link href="/" className='nav-button'>
+          Home
         </Link>
 
         {/* <Link href="/tickets">
           <a className='nav-button'>Tickets</a>
         </Link> */}
 
-        <Link href="/demo-pages">
-          <a className='nav-button'>Demo Pages</a>
+        <Link href="/demo-pages" className='nav-button'>
+          Demo Pages
         </Link>
 
-        <Link href="/games">
-          <a className='nav-button'>Games</a>
+        <Link href="/games" className='nav-button'>
+          Games
         </Link>
 
-        <Link href="/parts-and-rules">
-          <a className='nav-button'>Parts And Rules</a>
+        <Link href="/parts-and-rules" className='nav-button'>
+          Parts And Rules
         </Link>
 
-      <Link href="/contact">
-        <a className='nav-button'>Contact</a>
+      <Link href="/contact" className='nav-button'>
+        Contact
       </Link>
 
       </nav>
     </div>
-  )
+  );
 }
 
 export default Navigation
